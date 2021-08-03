@@ -1,6 +1,8 @@
 // Your code goes here
-// mouseover, keydown, wheel, load, focus, resize, scroll, select, dblclick, drag / drop
+// resize, select, drag / drop
 
+
+//working
 //mouse over event
 const navBar = document.querySelector('nav');
 
@@ -12,43 +14,71 @@ navBar.addEventListener('mouseover', function(event){
       }, 500);
     }, false);
 
+
+//working    
 //keydown event
 // function keyPress(event) {
 //         alert('You pressed a key!');
 // }
 // document.addEventListener('keydown', keyPress);
 
+
+//working
 //wheel event
+// function wheelOnPage(event){
+//     event.target.style.fontSize = '200%';
+// }
+// const el = document.querySelector('.text-content h2');
+// el.addEventListener('wheel', wheelOnPage);
 
-//load event
 
+//working
+// //load event
+// window.addEventListener('load', (event) => {
+//     alert('continue on?');
+// })
+
+
+//working
 // focus event
 // const newWindow = window.open("", "", "width=200, height=100");
 // newWindow.document.write("<p> A new Window has been created!</p>");
 // newWindow.focus();
 
-//resize event
-window.addEventListener('resize', function => console.log('window resizes'));
+
+//working
+// resize event
+// window.addEventListener('resize', function(event){
+//     console.log(target.)
+//     if ()
+// });
 
 
 //select event
-// function selectionText(event){
-//     const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-//     console.log(`what you selected ${selection}`)
-// }
-// const contentSection = document.querySelector('.content-section');
-// contentSection.addEventListener('select', selectionText);
-
-//dblclick event
-const sectionBackgroundColorChange = document.querySelector('body');
-sectionBackgroundColorChange.addEventListener('dblclick', function(event){
-    event.target.style.backgroundColor = 'grey';
-})
 
 
+
+// working
+// dblclick event
+// const addingBorders = document.querySelector('body');
+// addingBorders.addEventListener('dblclick', function(event){
+//     event.target.style.border = 'black 2px dotted';
+// })
+
+
+//working
 //scroll event
 // function scrolledPage(event) {
 //     console.log('Scrolling!');
 // }
+
+// function colorChanger(event){
+//     count = 0;
+//     count = count++;
+//     if (count % 2 === 0){
+        
+//     }
+// }
+
 
 // document.addEventListener('scroll', scrolledPage);
