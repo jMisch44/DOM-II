@@ -1,11 +1,10 @@
 // Your code goes here
-// resize, select, drag / drop
-
-
-//working
-//mouse over event
+const addingBorders = document.querySelector('body');
+const letsGoText = document.querySelector('.text-content h2');
+const allElements = document.querySelector('*');
 const navBar = document.querySelector('nav');
-
+const firstLink = document.querySelector('.nav-link')
+//mouse over event
 navBar.addEventListener('mouseover', function(event){
     event.target.style.color = 'yellow';
     
@@ -15,70 +14,84 @@ navBar.addEventListener('mouseover', function(event){
     }, false);
 
 
-//working    
+// nesting and stopPropagation and click event
+firstLink.addEventListener('click', function(event){
+    event.target.style.color = 'green';
+    event.stopPropagation();
+});
+  
 //keydown event
-// function keyPress(event) {
-//         alert('You pressed a key!');
-// }
-// document.addEventListener('keydown', keyPress);
+function keyPress(event) {
+        alert('You pressed a key!');
+}
+document.addEventListener('keydown', keyPress);
 
 
-//working
 //wheel event
-// function wheelOnPage(event){
-//     event.target.style.fontSize = '200%';
-// }
-// const el = document.querySelector('.text-content h2');
-// el.addEventListener('wheel', wheelOnPage);
+function wheelOnPage(event){
+    event.target.style.fontSize = '200%';
+}
+
+letsGoText.addEventListener('wheel', wheelOnPage);
 
 
-//working
-// //load event
-// window.addEventListener('load', (event) => {
-//     alert('continue on?');
-// })
+//load event
+window.addEventListener('load', (event) => {
+    alert('continue on?');
+})
 
 
-//working
-// focus event
-// const newWindow = window.open("", "", "width=200, height=100");
-// newWindow.document.write("<p> A new Window has been created!</p>");
-// newWindow.focus();
+// fullscreen change event
+document.addEventListener('fullscreenchange', (event) => {
+    if(document.fullscreenElement){
+        alert(`Element: ${document.fullscreenElement.id} entered full-screen mode.`);
+    }else {
+        alert('Leaving full-screen mode.');
+    }
+});
 
-
-//working
 // resize event
-// window.addEventListener('resize', function(event){
-//     console.log(target.)
-//     if ()
-// });
+window.addEventListener('resize', function(event){
+    console.log(EventTarget);
+});
 
 
 //select event
+document.addEventListener('selectstart', () => {
+    allElements.style.color = 'orange';
+})
 
 
-
-// working
 // dblclick event
-// const addingBorders = document.querySelector('body');
-// addingBorders.addEventListener('dblclick', function(event){
-//     event.target.style.border = 'black 2px dotted';
-// })
+
+addingBorders.addEventListener('dblclick', function(event){
+    event.target.style.border = 'black 2px dotted';
+})
 
 
-//working
+
+
+
+
+
 //scroll event
 // function scrolledPage(event) {
 //     console.log('Scrolling!');
 // }
 
-// function colorChanger(event){
-//     count = 0;
-//     count = count++;
-//     if (count % 2 === 0){
-        
-//     }
-// }
 
 
-// document.addEventListener('scroll', scrolledPage);
+let count = 0;
+function colorChanger(event){
+    count = count + 1;
+    if (count > 100 && count < 200){
+            allElements.style.backgroundColor = 'pink';
+    }else if (count > 150 && count < 250){
+            allElements.style.color = 'blue';
+    }else {
+        allElements.style.backgroundColor = '';
+        allElements.style.color = '';
+    }
+}
+
+document.addEventListener('scroll', colorChanger);
